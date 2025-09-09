@@ -1,0 +1,105 @@
+---
+// Stats cards component for dashboard metrics
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+  <!-- Revenue Card -->
+  <div class="bg-white overflow-hidden shadow rounded-lg">
+    <div class="p-5">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <div class="w-8 h-8 bg-indigo-500 rounded-md flex items-center justify-center">
+            <i class="fas fa-user-plus text-white"></i>
+          </div>
+        </div>
+        <div class="ml-5 w-0 flex-1">
+          <dl>
+            <dt class="text-sm font-medium text-gray-500 truncate">20 Users</dt>
+            <dd class="text-lg font-medium text-gray-900">Add User Entry</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-50 px-5 py-3">
+      <div class="text-sm">
+        <span class="text-green-600 font-medium">+9%</span>
+        <span class="text-gray-500 button">from last month</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Users Card -->
+  <div class="bg-white overflow-hidden shadow rounded-lg">
+    <div class="p-5">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <div class="w-8 h-8 bg-green-500 rounded-md flex items-center justify-center">
+            <i class="fas fa-users text-white"></i>
+          </div>
+        </div>
+        <div class="ml-5 w-0 flex-1">
+          <dl>
+            <dt class="text-sm font-medium text-gray-500 truncate">Total Users</dt>
+            <dd class="text-lg font-medium text-gray-900">2,847</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-50 px-5 py-3">
+      <div class="text-sm">
+        <span class="text-green-600 font-medium">+12%</span>
+        <span class="text-gray-500">from last month</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Orders Card -->
+  <div class="bg-white overflow-hidden shadow rounded-lg">
+    <div class="p-5">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <div class="w-8 h-8 bg-yellow-500 rounded-md flex items-center justify-center">
+            <i class="fas fa-shopping-cart text-white"></i>
+          </div>
+        </div>
+        <div class="ml-5 w-0 flex-1">
+          <dl>
+            <dt class="text-sm font-medium text-gray-500 truncate">Total Orders</dt>
+            <dd class="text-lg font-medium text-gray-900">1,429</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-50 px-5 py-3">
+      <div class="text-sm">
+        <span class="text-green-600 font-medium">+5%</span>
+        <span class="text-gray-500">from last month</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conversion Rate Card -->
+  <div class="bg-white overflow-hidden shadow rounded-lg">
+    <div class="p-5">
+      <div class="flex items-center">
+        <div class="flex-shrink-0">
+          <div class="w-8 h-8 bg-purple-500 rounded-md flex items-center justify-center">
+            <i class="fas fa-chart-line text-white"></i>
+          </div>
+        </div>
+        <div class="ml-5 w-0 flex-1">
+          <dl>
+            <dt class="text-sm font-medium text-gray-500 truncate">Conversion Rate</dt>
+            <dd class="text-lg font-medium text-gray-900">3.24%</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="bg-gray-50 px-5 py-3">
+      <div class="text-sm">
+        <span class="text-red-600 font-medium">-2%</span>
+        <span class="text-gray-500">from last month</span>
+      </div>
+    </div>
+  </div>
+</div>

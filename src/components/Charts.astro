@@ -48,13 +48,13 @@
 <!-- Product Sales Chart -->
 <div class="bg-white shadow rounded-lg p-6 mb-8">
   <div class="flex items-center justify-between mb-4">
-    <h3 class="text-lg font-medium text-gray-900">Product Sales</h3>
+    <h3 class="text-lg font-medium text-gray-900">Entry Date</h3>
     <div class="flex items-center space-x-4">
       <div class="text-sm">
         <span class="text-green-600 font-medium">+9%</span>
         <span class="text-gray-500">from last year</span>
       </div>
-      <div class="text-2xl font-bold text-gray-900">$6,820</div>
+      <div class="text-2xl font-bold text-gray-900">6,820</div>
     </div>
   </div>
   <div class="h-64">
@@ -69,10 +69,10 @@
     new Chart(revenueCtx, {
       type: 'line',
       data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        labels: ['TAR', 'Sichuan', 'Yunan', 'Qinghai', 'Gansu', 'Others'],
         datasets: [{
           label: 'Revenue',
-          data: [12000, 19000, 15000, 25000, 22000, 30000, 36358],
+          data: [12000, 19000, 15000, 15000, 600, 3000],
           borderColor: 'rgb(99, 102, 241)',
           backgroundColor: 'rgba(99, 102, 241, 0.1)',
           borderWidth: 3,

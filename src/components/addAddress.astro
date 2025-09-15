@@ -1,7 +1,7 @@
 <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
     <div class="max-w-7xl mx-auto">
       <div class="bg-white shadow rounded-lg p-6">
-        <h1 class="text-2xl font-bold text-gray-900 mb-6">Add New Item</h1>
+        <h1 class="text-2xl font-bold text-gray-900 mb-6">Address</h1>
         <p class="text-gray-600">Use this placeholder to add your informations</p>
         <div class="space-y-10 divide-y divide-gray-900/10">
           
@@ -30,63 +30,63 @@
                     <div class="sm:col-span-2">
                       <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
                       <div class="mt-2">
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        <input type="text" name="first-name" id="first-name" autocomplete="given-name" placeholder="First Name" class=" px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                       </div>
                     </div>
           
                     <div class="sm:col-span-2">
                       <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
                       <div class="mt-2">
-                        <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        <input type="text" name="last-name" id="last-name" autocomplete="family-name" placeholder="Last Name" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                       </div>
                     </div>
 
+                    <div class="sm:col-span-3">
+                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Addres Line 1</label>
+                        <div class="mt-2">
+                          <input type="text" name="first-name" id="first-name" autocomplete="given-name" placeholder="Address line 1 .." class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+                      </div>
+
+                      <div class="sm:col-span-3">
+                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Addres Line 2</label>
+                        <div class="mt-2">
+                          <input type="text" name="first-name" id="first-name" autocomplete="given-name" placeholder="Address line 2 .. " class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+                      </div>
+
                     <div class="sm:col-span-3 sm:col-start-1">
-                      <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Region</label>
+                      <label for="city" class="block text-sm font-medium leading-6 text-gray-900">City</label>
                       <div class="mt-2">                      
-                        <select name="region" id="region" autocomplete="region" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                        <select name="city" id="city" autocomplete="city" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                           <option>Utsang</option>
                           <option>Amdo</option>
                           <option>Kham</option>
                         </select>
                     </div>
                     </div>
-          
-                    <div class="sm:col-span-3">
-                      <label for="province" class="block text-sm font-medium leading-6 text-gray-900"> Province</label>
-                      <div class="mt-2">
-                        <select name="province" id="province" autocomplete="province" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option>TAR</option>
-                            <option>Sichuan</option>
-                            <option>Yunnan</option>
-                            <option>Qinghai</option>
-                            <option>Gansu</option>
+                    <div class="sm:col-span-3 sm:col-start-1">
+                        <label for="state" class="block text-sm font-medium leading-6 text-gray-900">State/Province</label>
+                        <div class="mt-2">                      
+                          <select name="state" id="state" autocomplete="state" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                            <option>Utsang</option>
+                            <option>Amdo</option>
+                            <option>Kham</option>
                           </select>
-                    </div>
-                    </div>
-
-                    <div class="sm:col-span-3">
-                        <label for="prefecture" class="block text-sm font-medium leading-6 text-gray-900">Prefecture</label>
-                        <div class="mt-2">
-                          <select name="prefecture" id="prefecture" autocomplete="prefecture" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                              <option>Add...</option>
-                              
-                            </select>
                       </div>
                       </div>
 
-                      <div class="sm:col-span-3">
-                        <label for="county" class="block text-sm font-medium leading-6 text-gray-900"> County</label>
-                        <div class="mt-2">
-                          <select name="county" id="county" autocomplete="county" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                              <option>Add..</option>
-                              
-                            </select>
+                      <div class="sm:col-span-3 sm:col-start-1">
+                        <label for="zipcode" class="block text-sm font-medium leading-6 text-gray-900">Zip Code</label>
+                        <div class="mt-2">                      
+                            <div class="mt-2">
+                                <input type="text" name="zipcode" id="zipcode" autocomplete="postal-code" placeholder="Zip code" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                              </div>
                       </div>
                       </div>
 
                       <div class="sm:col-span-3">
-                        <label for="township" class="block text-sm font-medium leading-6 text-gray-900">Township</label>
+                        <label for="township" class="block text-sm font-medium leading-6 text-gray-900">Country</label>
                         <div class="mt-2">
                           <select name="township" id="township" autocomplete="township" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                               <option>Add..</option>
@@ -94,13 +94,6 @@
                             </select>
                       </div>
                       </div>
-                  </div>
-
-                  <div class="sm:col-span-full">
-                    <label for="about" class="mt-4 block text-sm font-medium leading-6 text-gray-900">Comments</label>
-                    <div class="mt-2">
-                      <textarea id="about" placeholder="add the information" name="about" rows="3" class="p-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
-                    </div>
                   </div>
 
                 <div class="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8">

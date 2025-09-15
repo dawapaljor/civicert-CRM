@@ -68,7 +68,8 @@ src/
 │   └── Layout.astro
 ├── pages/
 │   ├── index.astro
-│   └── add.astro
+│   └── add.astro (Add User)
+|   └── view.astro (View the User entry)
 └── styles/
     └── global.css
 ```

@@ -29,14 +29,55 @@
       </div>
 
       <!-- Notifications -->
-      <div class="relative">
-        <button type="button" class="p-2 text-gray-400 hover:text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+      <div class="relative" x-data="{ notificationopen: false }">
+        <button type="button" @click="notificationopen = !notificationopen" class="p-2 text-gray-400 hover:text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
           <span class="sr-only">View notifications</span>
           <i class="fas fa-bell h-6 w-6"></i>
           <!-- Notification badge -->
           <span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-400 ring-2 ring-white"></span>
         </button>
+
+        <!-- Notifications menu dropdown -->
+        <div x-show="notificationopen" @click.away="notificationopen = false" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class=" origin-top-right absolute right-0 mt-2 w-60  rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+          
+          <!-- Notification 1 -->
+          <div class="flex items-start space-x-3 px-3 pt-3">
+            <div class="flex-shrink-0">
+              <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                <i class="fas fa-user text-green-600 text-sm"></i>
+              </div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-gray-900">
+                <span class="font-medium">Tenzin Added</span> 2 Users
+              </p>
+              <p class="text-xs text-gray-500">9:30 AM</p>
+            </div>
+          </div>
+
+          <!-- Notification 2 -->
+          <div class="flex items-start space-x-3 px-3 pt-3">
+            <div class="flex-shrink-0">
+              <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                <i class="fas fa-trash text-blue-600 text-sm"></i>
+              </div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-gray-900">
+                <span class="font-medium">Tenzin Added</span> 2 Users
+              </p>
+              <p class="text-xs text-gray-500">9:30 AM</p>
+            </div>
+          </div>
+
+          <!-- view all notification -->
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">  
+            <i class="fas fa-eye mr-2"></i>
+            View all
+          </a>
+        </div>
       </div>
+  
 
       <!-- Profile dropdown -->
       <div class="relative" x-data="{ open: false }">
@@ -47,7 +88,7 @@
           <i class="fas fa-chevron-down ml-1 text-gray-400"></i>
         </button>
 
-        <!-- Dropdown menu -->
+        <!-- Dropdown menu Profile -->
         <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
           <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
             <i class="fas fa-user mr-2"></i>

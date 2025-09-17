@@ -24,13 +24,13 @@
           <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <i class="fas fa-search text-gray-400"></i>
           </div>
-          <input type="text" placeholder="Search..." class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+          <input type="text" placeholder="Search..." class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400  sm:text-sm">
         </div>
       </div>
 
       <!-- Notifications -->
       <div class="relative" x-data="{ notificationopen: false }">
-        <button type="button" @click="notificationopen = !notificationopen" class="p-2 text-gray-400 hover:text-gray-500 hover:bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+        <button type="button" @click="notificationopen = !notificationopen" class="p-2 text-gray-400 hover:text-gray-500 hover:bg-gray-100 rounded-full  ">
           <span class="sr-only">View notifications</span>
           <i class="fas fa-bell h-6 w-6"></i>
           <!-- Notification badge -->
@@ -38,7 +38,8 @@
         </button>
 
         <!-- Notifications menu dropdown -->
-        <div x-show="notificationopen" @click.away="notificationopen = false" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class=" origin-top-right absolute right-0 mt-2 w-60  rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+        <div x-show="notificationopen" @click.away="notificationopen = false" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" 
+        class=" origin-top-right absolute right-0 mt-2 w-60  rounded-md shadow-lg py-1 bg-white ring-1 ring-slate-300 ring-opacity-5 focus:outline-none z-50">
           
           <!-- Notification 1 -->
           <div class="flex items-start space-x-3 px-3 pt-3">
@@ -48,8 +49,8 @@
               </div>
             </div>
             <div class="flex-1 min-w-0">
-              <p class="text-sm text-gray-900">
-                <span class="font-medium">Tenzin Added</span> 2 Users
+              <p class="text-xs text-gray-900 ">
+                <span class="font-bold">Tenzin Added</span> 2 Users
               </p>
               <p class="text-xs text-gray-500">9:30 AM</p>
             </div>
@@ -63,15 +64,15 @@
               </div>
             </div>
             <div class="flex-1 min-w-0">
-              <p class="text-sm text-gray-900">
-                <span class="font-medium">Tenzin Added</span> 2 Users
+              <p class="text-xs text-gray-900">
+                <span class="font-bold">Tenzin Added</span> 2 Users
               </p>
               <p class="text-xs text-gray-500">9:30 AM</p>
             </div>
           </div>
 
           <!-- view all notification -->
-          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">  
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 mt-2">  
             <i class="fas fa-eye mr-2"></i>
             View all
           </a>
@@ -81,7 +82,7 @@
 
       <!-- Profile dropdown -->
       <div class="relative" x-data="{ open: false }">
-        <button @click="open = !open" type="button" class="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <button @click="open = !open" type="button" class="flex items-center text-sm rounded-full focus:outline-none ">
           <span class="sr-only">Open user menu</span>
           <img class="h-8 w-8 rounded-full" src="/image/user.png" alt="Profile">
           <span class="ml-2 text-gray-700 font-medium hidden sm:block">Tenzin</span>
@@ -89,7 +90,8 @@
         </button>
 
         <!-- Dropdown menu Profile -->
-        <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+        <div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" 
+        class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-slate-300 ring-opacity-5 focus:outline-none z-50">
           <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
             <i class="fas fa-user mr-2"></i>
             Your Profile

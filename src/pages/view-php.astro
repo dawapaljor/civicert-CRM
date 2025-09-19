@@ -1,0 +1,165 @@
+<?php
+require '../config/constant.php';
+require '../config/rbac.php';
+requirePermission('view_dashboard');
+
+if ($_SERVER['SERVER_NAME'] === 'localhost') {
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+} else {
+    ini_set('display_errors', 0);
+    ini_set('log_errors', 1);
+    ini_set('error_log', 'php_errors.log'); 
+    error_reporting(E_ALL);
+}
+$stmt = $pdo->query("
+    SELECT 
+        c.contactid, c.firstname, c.lastname, 
+        p.prefix_name,
+        t.townshipname,
+        co.countyname,
+        pf.prefecturename,
+        pr.provincename,
+        r.regionname
+    FROM contacts c
+    LEFT JOIN prefixes p ON c.prefix_id = p.id
+    LEFT JOIN addresses a ON c.contactid = a.contactid
+    LEFT JOIN township t ON a.townshipid = t.townshipid
+    LEFT JOIN counties co ON t.countyid = co.countyid
+    LEFT JOIN prefectures pf ON co.prefectureid = pf.prefectureid
+    LEFT JOIN provinces pr ON pf.provinceid = pr.provinceid
+    LEFT JOIN regions r ON pr.regionid = r.regionid
+    ORDER BY c.contactid DESC
+");
+$contacts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+
+<!DOCTYPE html>
+<html lang="en" data-astro-cid-sckkx6r4>
+    <?php require '../includes/document-head.php'; ?>
+
+    <body class="bg-gray-50" data-astro-cid-sckkx6r4>
+        <div class="flex h-screen bg-gray-50"> <!-- Sidebar -->
+                <?php require '../includes/sidebar.php'; ?>
+            <div class="fixed inset-0 z-40 bg-gray-600 bg-opacity-75 hidden" id="sidebar-overlay"></div>
+            <script
+                type="module">document.addEventListener("DOMContentLoaded", function () { const s = document.getElementById("sidebar"), a = document.getElementById("sidebar-overlay"), i = document.getElementById("sidebar-toggle"); function d() { s.classList.toggle("-translate-x-full"), a.classList.toggle("hidden") } i && i.addEventListener("click", d), a.addEventListener("click", d), document.addEventListener("keydown", function (e) { e.key === "Escape" && !s.classList.contains("-translate-x-full") && d() }); const o = document.getElementById("add-dropdown-toggle"), t = document.getElementById("add-dropdown-menu"), n = document.getElementById("add-dropdown-arrow"); o && t && n && (o.addEventListener("click", function (e) { e.preventDefault(), e.stopPropagation(), t.classList.toggle("hidden"), n.classList.toggle("rotate-180") }), document.addEventListener("click", function (e) { !o.contains(e.target) && !t.contains(e.target) && (t.classList.add("hidden"), n.classList.remove("rotate-180")) }), document.addEventListener("keydown", function (e) { e.key === "Escape" && !t.classList.contains("hidden") && (t.classList.add("hidden"), n.classList.remove("rotate-180")) })) });</script>
+            <!-- Main content -->
+            <div class="flex-1 flex flex-col overflow-hidden lg:ml-64"> <!-- Header -->
+
+            <?php require '../includes/header.php'; ?>
+                <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+                <!-- Main content area -->
+                <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6"> <!-- Stats Cards -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6"> 
+                        <!-- Recent Activities -->
+                        <div class="lg:col-span-3">
+                            <div class="bg-white shadow rounded-lg p-6">
+                                <div class="flex items-center justify-between mb-6">
+                                    <h3 class="text-lg font-medium text-gray-900">Users Entry</h3> <a href="#"
+                                        class="text-sm text-indigo-600 hover:text-indigo-500 font-medium">View all</a>
+                                </div>
+                                <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                                    <div class="flex items-center gap-2"> <label for="table-search"
+                                            class="text-sm text-gray-600">Search:</label> <input id="table-search"
+                                            type="text" placeholder="Search by name, region..."
+                                            class=" p-4 block w-64 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+                                    </div>
+                                    <div class="flex items-center gap-2"> <label for="page-size"
+                                            class="text-sm text-gray-600">Rows per page:</label> <select id="page-size"
+                                            class=" px-4 py-1.5 rounded-md border-0   text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+                                            <option value="5">10</option>
+                                            <option value="10" selected>50</option>
+                                            <option value="25">100</option>
+                                        </select> </div>
+                                </div>
+                                <div class="overflow-x-auto">
+                                <div class="overflow-x-auto shadow-md sm:rounded-2xl border border-gray-200">
+                                    <table class="min-w-full divide-y divide-gray-200">
+                                        <thead class="bg-gray-100">
+                                            <tr>
+                                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-700 uppercase tracking-wide">Name</th>
+                                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-700 uppercase tracking-wide">Address</th>
+
+                                                <?php if (hasPermission('edit') || hasPermission('delete')): ?>
+                                                    <th class="px-6 py-3 text-right text-sm font-semibold text-gray-700 uppercase tracking-wide">
+                                                        Actions
+                                                    </th>
+                                                <?php endif; ?>
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody class="bg-white divide-y divide-gray-100" id="data-rows">
+                                            <?php foreach ($contacts as $contact): ?>
+                                                <tr class="hover:bg-gray-50">
+                                                    <td class="px-6 py-4 whitespace-nowrap">
+                                                        <div class="flex flex-col">
+                                                            <span class="text-sm font-medium text-gray-900">
+                                                                <?= htmlspecialchars($contact['prefix_name'] ?? '-') ?>
+                                                                <?= htmlspecialchars($contact['firstname']) ?? '-' ?>
+                                                                <?= htmlspecialchars($contact['lastname']) ?>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-6 py-4 text-sm text-gray-700">
+                                                        <?= htmlspecialchars($contact['townshipname'] ?? '-') ?><br>
+                                                        <?= htmlspecialchars($contact['countyname'] ?? '-') ?><br>
+                                                        <?= htmlspecialchars($contact['prefecturename'] ?? '-') ?>,
+                                                        <?= htmlspecialchars($contact['provincename'] ?? '-') ?><br>
+                                                        <?= htmlspecialchars($contact['regionname'] ?? '-') ?>
+                                                    </td>
+
+                                                        <?php if (hasPermission('edit') || hasPermission('delete')): ?>
+                                                            <td class="px-6 py-4 text-right whitespace-nowrap">
+                                                                <a href="<?php echo SITEURL; ?>/contact/profile.php?id=<?= urlencode($contact['contactid']) ?>" 
+                                                                class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-indigo-600 bg-indigo-50 rounded-md hover:bg-indigo-100">
+                                                                    View
+                                                                </a>
+
+                                                                <?php if (hasPermission('delete')): ?>
+                                                                    <form method="POST" action="delete.php"
+                                                                        onsubmit="return confirm('Are you sure you want to delete this contact?');"
+                                                                        style="display:inline;">
+                                                                        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']); ?>">
+                                                                        <input type="hidden" name="id" value="<?= htmlspecialchars($contact['contactid']); ?>">
+                                                                        <button type="submit" 
+                                                                                class="ml-2 inline-flex items-center px-3 py-1.5 text-xs font-medium text-red-600 bg-red-50 rounded-md hover:bg-red-100">
+                                                                            Delete
+                                                                        </button>
+                                                                    </form>
+                                                                <?php endif; ?>
+
+                                                            </td>
+                                                        <?php endif; ?>
+
+                                                </tr>
+                                            <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+                                </div>
+                                <div class="mt-4 flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
+                                    <div class="text-sm text-gray-600" id="pagination-summary">Showing 0–0 of 0</div>
+                                    <div class="flex items-center gap-1" id="pagination-controls"> <button
+                                            id="page-prev"
+                                            class="px-5 py-1 rounded-md border border-gray-300 text-sm text-gray-700 hover:bg-gray-50">Prev</button>
+                                        <div id="page-buttons" class="flex items-center gap-1"></div> <button
+                                            id="page-next"
+                                            class="px-5 py-1 rounded-md border border-gray-300 text-sm text-gray-700 hover:bg-gray-50">Next</button>
+                                    </div>
+                                </div>
+                                <script
+                                    type="module">document.addEventListener("DOMContentLoaded", function () { const x = document.getElementById("data-rows"), g = Array.from(x.querySelectorAll("tr")), y = document.getElementById("table-search"), p = document.getElementById("page-size"), m = document.getElementById("page-prev"), u = document.getElementById("page-next"), h = document.getElementById("page-buttons"), E = document.getElementById("pagination-summary"); let t = 1, l = parseInt(p.value, 10), r = [...g]; function f(e) { return e.toLowerCase().replace(/\s+/g, " ").trim() } function b() { const e = f(y.value || ""); e ? r = g.filter(n => f(n.textContent).includes(e)) : r = [...g], t = 1, s() } function v(e) { h.innerHTML = ""; const n = 5; let a = Math.max(1, t - Math.floor(n / 2)), i = Math.min(e, a + n - 1); a = Math.max(1, i - n + 1); for (let o = a; o <= i; o++) { const d = document.createElement("button"); d.textContent = String(o), d.className = "px-3 py-1 rounded-md border text-sm " + (o === t ? "bg-indigo-600 text-white border-indigo-600" : "border-gray-300 text-gray-700 hover:bg-gray-50"), d.addEventListener("click", () => { t = o, s() }), h.appendChild(d) } m.disabled = t <= 1, u.disabled = t >= e, m.classList.toggle("opacity-50", m.disabled), u.classList.toggle("opacity-50", u.disabled) } function s() { const e = r.length, n = Math.max(1, Math.ceil(e / l)); t = Math.min(t, n), g.forEach(c => { c.style.display = "none" }); const a = (t - 1) * l, i = Math.min(a + l, e); for (let c = a; c < i; c++)r[c].style.display = ""; const o = e === 0 ? 0 : a + 1, d = i; E.textContent = `Showing ${o}–${d} of ${e}`, v(n) } y.addEventListener("input", b), p.addEventListener("change", () => { l = parseInt(p.value, 10), t = 1, s() }), m.addEventListener("click", () => { t > 1 && (t--, s()) }), u.addEventListener("click", () => { const e = Math.max(1, Math.ceil(r.length / l)); t < e && (t++, s()) }), s() });</script>
+                            </div>
+                        </div>
+
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

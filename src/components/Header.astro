@@ -39,7 +39,7 @@
 
         <!-- Notifications menu dropdown -->
         <div x-show="notificationopen" @click.away="notificationopen = false" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" 
-        class=" origin-top-right absolute right-0 mt-2 w-60  rounded-md shadow-lg py-1 bg-white ring-1 ring-slate-300 ring-opacity-5 focus:outline-none z-50">
+        class=" origin-top-right absolute right-0 mt-2  rounded-md shadow-lg py-1 bg-white ring-1 ring-slate-300 ring-opacity-5 focus:outline-none z-50 w-72">
           
           <!-- Notification 1 -->
           <div class="flex items-start space-x-3 px-3 pt-3">
@@ -111,3 +111,5 @@
 </header>
 
 <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+

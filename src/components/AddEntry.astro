@@ -1,115 +1,224 @@
 <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="bg-white shadow rounded-lg p-6">
-        <h1 class="text-2xl font-bold text-gray-900 mb-6">Add New Item</h1>
-        <p class="text-gray-600">Use this placeholder to add your informations</p>
-        <div class="space-y-10 divide-y divide-gray-900/10">
-          
-          
-            <div class="grid grid-cols-1 gap-x-8 gap-y-8 pt-10 md:grid-cols-3">
-              <div class="px-4 sm:px-0">
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Contact Information</h2>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Use this placeholder to add your informations</p>
-              </div>
-              
-          
-              <form class="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
-                <div class="px-4 py-6 sm:p-8">
-                  
-                  <div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                    <div class="sm:col-span-2 sm:col-start-1">
-                      <label for="prefix" class="block text-sm font-medium leading-6 text-gray-900">Prefix</label>
-                      <div class="mt-2">                      
-                        <select name="prefix" id="prefix" autocomplete="prefix" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                          <option>Mr.</option>
-                          <option>Mrs.</option>
-                          <option>Miss</option>
-                        </select>
-                    </div>
-                    </div>
-                    <div class="sm:col-span-2">
-                      <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
-                      <div class="mt-2">
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                      </div>
-                    </div>
-          
-                    <div class="sm:col-span-2">
-                      <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
-                      <div class="mt-2">
-                        <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                      </div>
-                    </div>
+  <div class="max-w-7xl mx-auto">
+    <div class="bg-white shadow rounded-lg p-6">
+      <h1 class="text-2xl font-bold text-gray-900 mb-6">Add New User</h1>
+      <p class="text-gray-600">Use this placeholder to add your informations</p>
+      <div class="space-y-10 divide-y divide-gray-900/10">
+   
+        <!-- form Open Here  -->
+<form>
+        <div class="grid grid-cols-1 gap-x-8 gap-y-8 pt-10 md:grid-cols-3">
+ <!-- section 1 -->
+          <div class="px-4 sm:px-0">
+            <h2 class="text-base font-semibold leading-7 text-gray-900">Project Section</h2>
+            <p class="mt-1 text-sm leading-6 text-gray-600"> Use this placeholder to add your informations</p>
+          </div>
 
-                    <div class="sm:col-span-3 sm:col-start-1">
-                      <label for="region" class="block text-sm font-medium leading-6 text-gray-900">Region</label>
-                      <div class="mt-2">                      
-                        <select name="region" id="region" autocomplete="region" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                          <option>Utsang</option>
-                          <option>Amdo</option>
-                          <option>Kham</option>
-                        </select>
-                    </div>
-                    </div>
-          
-                    <div class="sm:col-span-3">
-                      <label for="province" class="block text-sm font-medium leading-6 text-gray-900"> Province</label>
-                      <div class="mt-2">
-                        <select name="province" id="province" autocomplete="province" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                            <option>TAR</option>
-                            <option>Sichuan</option>
-                            <option>Yunnan</option>
-                            <option>Qinghai</option>
-                            <option>Gansu</option>
-                          </select>
-                    </div>
-                    </div>
+          <div
+            class="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2"
+          >
+            <div class="px-4 py-6 sm:p-8">
+              <div
+                class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6"
+              >
+                <div class="sm:col-span-2">
+                  <div class="mt-2">
+                    <fieldset aria-multiline="true">
+                      <legend class="text-sm/6 font-semibold text-gray-800"
+                        >Project Name</legend
+                      >
+                      <div class="mt-6 space-y-6">
+                        <!--?php foreach ($projects as $proj): ?-->
+                        <div class="flex items-center gap-x-3">
+                          <input value="<?= htmlspecialchars($proj['projectid']); ?>" id="project-list" type="checkbox" name="project" checked class=""
+                          />
+                          <label for="project-list" class="block text-sm/6 text-gray-800"
+                            ><!--?= htmlspecialchars($proj['projectname']); ?-->Placeholder</label
+                          >
+                        </div>
+                        <!--?php endforeach; ?-->
 
-                    <div class="sm:col-span-3">
-                        <label for="prefecture" class="block text-sm font-medium leading-6 text-gray-900">Prefecture</label>
-                        <div class="mt-2">
-                          <select name="prefecture" id="prefecture" autocomplete="prefecture" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                              <option>Add...</option>
-                              
-                            </select>
+                        <div class="flex items-center gap-x-3">
+                          <input id="project-list" type="checkbox" name="project" class=""/>
+                          <label for="project-list"class="block text-sm/6 text-gray-800">Same as email</label>
+                        </div>
                       </div>
-                      </div>
-
-                      <div class="sm:col-span-3">
-                        <label for="county" class="block text-sm font-medium leading-6 text-gray-900"> County</label>
-                        <div class="mt-2">
-                          <select name="county" id="county" autocomplete="county" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                              <option>Add..</option>
-                              
-                            </select>
-                      </div>
-                      </div>
-
-                      <div class="sm:col-span-3">
-                        <label for="township" class="block text-sm font-medium leading-6 text-gray-900">Township</label>
-                        <div class="mt-2">
-                          <select name="township" id="township" autocomplete="township" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                              <option>Add..</option>
-                              
-                            </select>
-                      </div>
-                      </div>
+                    </fieldset>
                   </div>
-
-                  <div class="sm:col-span-full">
-                    <label for="about" class="mt-4 block text-sm font-medium leading-6 text-gray-900">Comments</label>
-                    <div class="mt-2">
-                      <textarea id="about" placeholder="add the information" name="about" rows="3" class="p-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
-                    </div>
-                  </div>
-
-                <div class="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8">
-                  <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-                  <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
                 </div>
-              </form>
+
+                <div class="sm:col-span-4">
+                  <div class="sm:col-span-3 mt-4">
+                    <h3 class="text-sm font-medium text-gray-900">
+                      Subprojects
+                    </h3>
+                    <div id="subprojectsContainer" class="mt-2 space-y-2">
+                      <p class="text-gray-500">Select a/multiple projects</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-3 ">
+                  <label for="types" class="block text-sm font-medium leading-6 text-gray-900" >Types</label>
+                  <div class="mt-2">
+                    <select name="types" id="types" autocomplete="types" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                      <option>Key Organiser</option>
+                      <option>Influencer</option>
+                      <option>Individual</option>
+                      <option>Activists</option>
+                      <option>Thers</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-3 ">
+                  <label for="beacon" class="block text-sm font-medium leading-6 text-gray-900" >Beacon</label>
+                  <div class="mt-2">
+                    <select name="beacon" id="beacon" autocomplete="types" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                      <option>Kelloge</option>
+                      <option>......</option>
+                      <option>......</option>
+                      <option>......</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
+<!-- section 2 -->
+          <div class="px-4 sm:px-0">
+            <h2 class="text-base font-semibold leading-7 text-gray-900">Contact Information</h2>
+            <p class="mt-1 text-sm leading-6 text-gray-600">Use this placeholder to add your informations</p>
+          </div>
+
+          <div class="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+            <div class="px-4 py-6 sm:p-8">
+              <div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6" >
+                <div class="sm:col-span-2 sm:col-start-1">
+                  <label for="prefix" class="block text-sm font-medium leading-6 text-gray-900">Prefix</label>
+                  <div class="mt-2">
+                    <select name="prefix" id="prefix" autocomplete="prefix" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                      <option>Mr.</option>
+                      <option>Mrs.</option>
+                      <option>Miss</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="sm:col-span-2">
+                  <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
+                  <div class="mt-2">
+                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-2">
+                  <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
+                  <div class="mt-2">
+                    <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-2 ">
+                  <label class="text-base font-semibold text-gray-900">Gender</label>
+                  <fieldset class="mt-4">
+                    <div class="space-y-4 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
+                      <div class="flex items-center">
+                        <input id="email" name="notification-method" type="radio" checked class="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-600">
+                        <label for="email" class="ml-3 block text-sm  leading-6 text-gray-900">Male</label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="sms" name="notification-method" type="radio" class="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-600">
+                        <label for="sms" class="ml-3 block text-sm  leading-6 text-gray-900">Female</label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="push" name="notification-method" type="radio" class="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-600">
+                        <label for="push" class="ml-3 block text-sm  leading-6 text-gray-900">Unknown</label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="push" name="notification-method" type="radio" class="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-600">
+                        <label for="push" class="ml-3 block text-sm  leading-6 text-gray-900">Other</label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+
+      
+
+                <div class="sm:col-span-3 sm:col-start-1">
+                  <label for="region" class="block text-sm font-medium leading-6 text-gray-900" >Region</label>
+                  <div class="mt-2">
+                    <select name="region" id="region" autocomplete="region" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                      <option>Utsang</option>
+                      <option>Amdo</option>
+                      <option>Kham</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-3">
+                  <label for="province" class="block text-sm font-medium leading-6 text-gray-900">Province</label>
+                  <div class="mt-2">
+                    <select name="province" id="province" autocomplete="province" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                      <option>TAR</option>
+                      <option>Sichuan</option>
+                      <option>Yunnan</option>
+                      <option>Qinghai</option>
+                      <option>Gansu</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-3">
+                  <label for="prefecture"  class="block text-sm font-medium leading-6 text-gray-900">Prefecture</label>
+                  <div class="mt-2">
+                    <select name="prefecture" id="prefecture" autocomplete="prefecture" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                      <option>Add...</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-3">
+                  <label for="county" class="block text-sm font-medium leading-6 text-gray-900">County</label>
+                  <div class="mt-2">
+                    <select name="county" id="county" autocomplete="county" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                      <option>Add..</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="sm:col-span-3">
+                  <label for="township" class="block text-sm font-medium leading-6 text-gray-900">Town</label>
+                  <div class="mt-2">
+                    <select name="township" id="township" autocomplete="township" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                      <option>Add..</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sm:col-span-full">
+                <label for="note" class="mt-4 block text-sm font-medium leading-6 text-gray-900">Note</label>
+                <div class="mt-2">
+                  <textarea id="note" placeholder="add the information" name="note" rows="3" class="p-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8"
+              >
+                <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button
+                >
+                <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button
+                >
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        </form>
+        <!-- form close here -->
       </div>
     </div>
-  </main>
+  </div>
+</main>

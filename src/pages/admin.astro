@@ -5,8 +5,8 @@ import Header from "../components/Header.astro";
 import StatsCards from "../components/StatsCards.astro";
 import Entry from "../components/sections/EntryTable.astro"
 import RecentActivities from "../components/RecentActivities.astro";
-
-const usertype ="Users"
+import AdminTable from "../components/sections/adminTable.astro";
+const usertype ="Admin Role Assignments"
 ---
 <Layout>
     <Layout>
@@ -25,11 +25,15 @@ const usertype ="Users"
               <StatsCards />
 
               <!-- Bottom Section -->
-              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
 
                 <!-- Recent Activities -->
                 <div class="lg:col-span-3">
-                  <Entry {usertype}/>
+                  
+                  <AdminTable {usertype}/>
+                </div>
+                <div class="lg:col-span-1">
+                  <RecentActivities>
                 </div>
 
  <!-- Recent Activities -->
@@ -38,7 +42,6 @@ const usertype ="Users"
                   <RecentActivities/>
                   </div> -->
                 
-              
             </main>
           </div>
         </div>

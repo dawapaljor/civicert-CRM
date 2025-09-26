@@ -1,13 +1,8 @@
----
-// Sidebar component for admin dashboard
----
-
-<aside class="fixed inset-y-0 left-0 z-50 w-64 bg-indigo-900 shadow-lg transform transition-transform duration-300 ease-in-out" id="sidebar">
+<aside class="fixed inset-y-0 left-0 z-50 w-64 bg-indigo-900 dark:bg-slate-950 shadow-lg transform transition-transform duration-300 ease-in-out" id="sidebar">
   <!-- Logo -->
   <div class="flex items-center justify-center h-16 bg-indigo-800">
     <img src="/image/icon-tai.png" alt="" class="w-10 h-10">
     <h1 class="text-white text-xl font-bold px-3">CiviCERT</h1>
-    
   </div>
 
   <!-- Navigation -->
@@ -19,36 +14,34 @@
         Dashboard
       </a>
 
-      <!-- Add Dropdown -->
+      <!-- Add Expandable Menu -->
       <div class="relative">
-        <button id="add-dropdown-toggle" class="group flex items-center justify-between w-full px-2 py-2 text-sm font-medium rounded-md text-indigo-300 hover:text-indigo-400">
+        <button id="add-menu-toggle" class="group flex items-center justify-between w-full px-2 py-2 text-sm font-medium rounded-md text-indigo-300 hover:text-indigo-400">
           <div class="flex items-center">
             <i class="fas fa-user-alt mr-3 text-indigo-300"></i>
             Contact
           </div>
-          <i class="fas fa-chevron-down text-xs transition-transform duration-200" id="add-dropdown-arrow"></i>
+          <i class="fas fa-chevron-down text-xs transition-transform duration-200" id="add-menu-arrow"></i>
         </button>
-        
-        <!-- Dropdown Menu -->
-        <div id="add-dropdown-menu" class="hidden absolute left-0 right-0 mt-1 bg-indigo-800 rounded-md shadow-lg z-10">
-          <div class="py-1">
-            <a href="/add" class="block px-4 py-2 text-sm text-indigo-300 hover:bg-indigo-700 hover:text-white">
-              <i class="fas fa-user-plus mr-2"></i>
-              Add User
-            </a>
-            <a href="/view" class="block px-4 py-2 text-sm text-indigo-300 hover:bg-indigo-700 hover:text-white">
-              <i class="fas fa-address-book mr-2"></i>
-              View User
-            </a>
-            <a href="/add/organization" class="block px-4 py-2 text-sm text-indigo-300 hover:bg-indigo-700 hover:text-white">
-              <i class="fas fa-building mr-2"></i>
-              Add Organization
-            </a>
-            <a href="/add/event" class="block px-4 py-2 text-sm text-indigo-300 hover:bg-indigo-700 hover:text-white">
-              <i class="fas fa-calendar-plus mr-2"></i>
-              Add Event
-            </a>
-          </div>
+
+        <!-- Expandable Menu Content -->
+        <div id="add-menu-content" class="hidden mt-1 space-y-1 bg-indigo-800 rounded-md shadow-lg">
+          <a href="/add" class="block px-4 py-2 text-sm text-indigo-300 hover:bg-indigo-700 hover:text-white">
+            <i class="fas fa-user-plus mr-2"></i>
+            Add User
+          </a>
+          <a href="/view" class="block px-4 py-2 text-sm text-indigo-300 hover:bg-indigo-700 hover:text-white">
+            <i class="fas fa-address-book mr-2"></i>
+            View User
+          </a>
+          <a href="/add/organization" class="block px-4 py-2 text-sm text-indigo-300 hover:bg-indigo-700 hover:text-white">
+            <i class="fas fa-building mr-2"></i>
+            Add Organization
+          </a>
+          <a href="/add/event" class="block px-4 py-2 text-sm text-indigo-300 hover:bg-indigo-700 hover:text-white">
+            <i class="fas fa-calendar-plus mr-2"></i>
+            Add Event
+          </a>
         </div>
       </div>
 
@@ -56,13 +49,14 @@
         <i class="fas fa-user-alt mr-3 text-indigo-300"></i>
         View User Entry
       </a>
+
       <!-- menu 2 -->
       <a href="#" class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-indigo-300 hover:text-indigo-400 ">
         <i class="fas fa-chart-line mr-3 text-gray-400 group-hover:text-gray-300"></i>
         Analytics
       </a>
 
-      <!-- menu3  -->
+      <!-- menu3 -->
       <a href="#" class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-indigo-300 hover:text-indigo-400 ">
         <i class="fas fa-users mr-3 text-gray-400 group-hover:text-gray-300"></i>
         Projects
@@ -74,25 +68,24 @@
         Side Menu 4
       </a>
 
-    <!-- Reports -->
+      <!-- Reports -->
       <a href="#" class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-indigo-300 hover:text-indigo-400 ">
         <i class="fas fa-file-alt mr-3 text-gray-400 group-hover:text-gray-300"></i>
         Reports
       </a>
 
-
-
-    <!-- Divider -->
-    <div class="mt-8 pt-8 border-t border-gray-200">
-      <div class="space-y-1">
-        <a href="#" class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-indigo-300 hover:text-indigo-400 ">
-          <i class="fas fa-question-circle mr-3 text-gray-400 group-hover:text-gray-300"></i>
-          Help & Support
-        </a>
-        <a href="#" class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-indigo-300 hover:text-indigo-400 ">
-          <i class="fas fa-sign-out-alt mr-3 text-gray-400 group-hover:text-gray-300"></i>
-          Logout
-        </a>
+      <!-- Divider -->
+      <div class="mt-8 pt-8 border-t border-gray-200">
+        <div class="space-y-1">
+          <a href="#" class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-indigo-300 hover:text-indigo-400 ">
+            <i class="fas fa-question-circle mr-3 text-gray-400 group-hover:text-gray-300"></i>
+            Help & Support
+          </a>
+          <a href="#" class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-indigo-300 hover:text-indigo-400 ">
+            <i class="fas fa-sign-out-alt mr-3 text-gray-400 group-hover:text-gray-300"></i>
+            Logout
+          </a>
+        </div>
       </div>
     </div>
   </nav>
@@ -128,36 +121,36 @@
       }
     });
 
-    // Add dropdown toggle functionality
-    const addDropdownToggle = document.getElementById('add-dropdown-toggle');
-    const addDropdownMenu = document.getElementById('add-dropdown-menu');
-    const addDropdownArrow = document.getElementById('add-dropdown-arrow');
+    // Add Expandable menu toggle functionality
+    const addMenuToggle = document.getElementById('add-menu-toggle');
+    const addMenuContent = document.getElementById('add-menu-content');
+    const addMenuArrow = document.getElementById('add-menu-arrow');
 
-    if (addDropdownToggle && addDropdownMenu && addDropdownArrow) {
-      addDropdownToggle.addEventListener('click', function(e) {
+    if (addMenuToggle && addMenuContent && addMenuArrow) {
+      addMenuToggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        
-        // Toggle dropdown visibility
-        addDropdownMenu.classList.toggle('hidden');
+
+        // Toggle menu visibility
+        addMenuContent.classList.toggle('hidden');
         
         // Rotate arrow
-        addDropdownArrow.classList.toggle('rotate-180');
+        addMenuArrow.classList.toggle('rotate-180');
       });
 
-      // Close dropdown when clicking outside
+      // Close menu when clicking outside
       document.addEventListener('click', function(e) {
-        if (!addDropdownToggle.contains(e.target) && !addDropdownMenu.contains(e.target)) {
-          addDropdownMenu.classList.add('hidden');
-          addDropdownArrow.classList.remove('rotate-180');
+        if (!addMenuToggle.contains(e.target) && !addMenuContent.contains(e.target)) {
+          addMenuContent.classList.add('hidden');
+          addMenuArrow.classList.remove('rotate-180');
         }
       });
 
-      // Close dropdown on escape key
+      // Close menu on escape key
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && !addDropdownMenu.classList.contains('hidden')) {
-          addDropdownMenu.classList.add('hidden');
-          addDropdownArrow.classList.remove('rotate-180');
+        if (e.key === 'Escape' && !addMenuContent.classList.contains('hidden')) {
+          addMenuContent.classList.add('hidden');
+          addMenuArrow.classList.remove('rotate-180');
         }
       });
     }

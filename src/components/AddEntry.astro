@@ -1,8 +1,8 @@
-<main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
+<main class="flex-1 overflow-x-hidden overflow-y-auto dark:bg-slate-900 ">
   <div class="max-w-7xl mx-auto">
-    <div class="bg-white shadow rounded-lg p-6">
-      <h1 class="text-2xl font-bold text-gray-900 mb-6">Add New User</h1>
-      <p class="text-gray-600">Use this placeholder to add your informations</p>
+    <div class=" shadow rounded-lg p-6">
+      <h1 class="text-2xl font-bold text-gray-900 mb-6 dark:text-indigo-100">Add New User</h1>
+      <p class="text-gray-600  dark:text-indigo-300">Use this placeholder to add your informations</p>
       <div class="space-y-10 divide-y divide-gray-900/10">
    
         <!-- form Open Here  -->
@@ -12,18 +12,18 @@
  <!-- section 1 -->
            <!-- column changed col-span-2 -->
           <div class="px-4 sm:px-0 col-span-2">
-            <h2 class="text-base font-semibold leading-7 text-gray-900">Project Section</h2>
-            <p class="mt-1 text-sm leading-6 text-gray-600"> Use this placeholder to add your informations</p>
+            <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-indigo-100">Project Section</h2>
+            <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-indigo-300"> Use this placeholder to add your informations</p>
           </div>
 
           <!-- column changed md:grid-cols-4 -->
-          <div class="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-4">
+          <div class="shadow-sm ring-2 ring-gray-900/5 dark:ring-slate-800 sm:rounded-xl md:col-span-4 dark:shadow-slate-900 ">
             <div class="px-4 py-6 sm:p-8">
               <div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <div class="sm:col-span-2">
                   <div class="mt-2">
                     <fieldset aria-multiline="true">
-                      <legend class="text-sm/6 font-semibold text-gray-800"
+                      <legend class="text-sm/6 font-semibold text-gray-800 dark:text-indigo-200"
                         >Project Name</legend
                       >
                       <div class="mt-6 space-y-6">
@@ -31,7 +31,7 @@
                         <div class="flex items-center gap-x-3">
                           <input value="<?= htmlspecialchars($proj['projectid']); ?>" id="project-list" type="checkbox" name="project" checked class=""
                           />
-                          <label for="project-list" class="block text-sm/6 text-gray-800"
+                          <label for="project-list" class="block text-sm/6 text-gray-800 dark:text-indigo-200"
                             ><!--?= htmlspecialchars($proj['projectname']); ?-->Placeholder</label
                           >
                         </div>
@@ -39,7 +39,7 @@
 
                         <div class="flex items-center gap-x-3">
                           <input id="project-list" type="checkbox" name="project" class=""/>
-                          <label for="project-list"class="block text-sm/6 text-gray-800">Same as email</label>
+                          <label for="project-list"class="block text-sm/6 text-gray-800 dark:text-indigo-200">Same as email</label>
                         </div>
                       </div>
                     </fieldset>
@@ -52,7 +52,7 @@
                       Subprojects
                     </h3>
                     <div id="subprojectsContainer" class="mt-2 space-y-2">
-                      <p class="text-gray-500">Select a/multiple projects</p>
+                      <p class="text-gray-500 dark:text-indigo-200">Select a/multiple projects</p>
                     </div>
                   </div>
                 </div>
@@ -60,7 +60,7 @@
                 <div class="sm:col-span-3 ">
                   <label for="types" class="block text-sm font-medium leading-6 text-gray-900" >Types</label>
                   <div class="mt-2">
-                    <select name="types" id="types" autocomplete="types" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    <select name="types" id="types" autocomplete="types" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-slate-800 dark:bg-slate-950 dark:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                       <option>Key Organiser</option>
                       <option>Influencer</option>
                       <option>Individual</option>
@@ -73,7 +73,7 @@
                 <div class="sm:col-span-3 ">
                   <label for="beacon" class="block text-sm font-medium leading-6 text-gray-900" >Beacon</label>
                   <div class="mt-2">
-                    <select name="beacon" id="beacon" autocomplete="types" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    <select name="beacon" id="beacon" autocomplete="types" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-slate-800 dark:bg-slate-950 dark:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                       <option>Kelloge</option>
                       <option>......</option>
                       <option>......</option>
@@ -88,18 +88,18 @@
 <!-- section 2 -->
           <!-- column changed col-span-2 -->
           <div class="px-4 sm:px-0 col-span-2">
-            <h2 class="text-base font-semibold leading-7 text-gray-900">Contact Information</h2>
-            <p class="mt-1 text-sm leading-6 text-gray-600">Use this placeholder to add your informations</p>
+            <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-indigo-100">Contact Information</h2>
+            <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-indigo-300">Use this placeholder to add your informations</p>
           </div>
 
           <!-- column changed md:grid-cols-4 -->
-          <div class="bg-white shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-4">
+          <div class="shadow-sm ring-2 ring-gray-900/5 dark:ring-slate-800 sm:rounded-xl md:col-span-4 dark:shadow-slate-900 ">
             <div class="px-4 py-6 sm:p-8">
               <div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6" >
                 <div class="sm:col-span-2 sm:col-start-1">
                   <label for="prefix" class="block text-sm font-medium leading-6 text-gray-900">Prefix</label>
                   <div class="mt-2">
-                    <select name="prefix" id="prefix" autocomplete="prefix" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    <select name="prefix" id="prefix" autocomplete="prefix" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-slate-800 dark:bg-slate-950 dark:text-slate-400  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                       <option>Mr.</option>
                       <option>Mrs.</option>
                       <option>Miss</option>
@@ -109,14 +109,14 @@
                 <div class="sm:col-span-2">
                   <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
                   <div class="mt-2">
-                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                    <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-slate-800 dark:bg-slate-950 dark:text-slate-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
                   </div>
                 </div>
 
                 <div class="sm:col-span-2">
                   <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
                   <div class="mt-2">
-                    <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                    <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-slate-800 dark:bg-slate-950 dark:text-slate-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
                   </div>
                 </div>
 
@@ -149,7 +149,7 @@
                 <div class="sm:col-span-3 sm:col-start-1">
                   <label for="region" class="block text-sm font-medium leading-6 text-gray-900" >Region</label>
                   <div class="mt-2">
-                    <select name="region" id="region" autocomplete="region" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    <select name="region" id="region" autocomplete="region" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-slate-800 dark:bg-slate-950 dark:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                       <option>Utsang</option>
                       <option>Amdo</option>
                       <option>Kham</option>
@@ -160,7 +160,7 @@
                 <div class="sm:col-span-3">
                   <label for="province" class="block text-sm font-medium leading-6 text-gray-900">Province</label>
                   <div class="mt-2">
-                    <select name="province" id="province" autocomplete="province" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    <select name="province" id="province" autocomplete="province" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-slate-800 dark:bg-slate-950 dark:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                       <option>TAR</option>
                       <option>Sichuan</option>
                       <option>Yunnan</option>
@@ -173,7 +173,7 @@
                 <div class="sm:col-span-3">
                   <label for="prefecture"  class="block text-sm font-medium leading-6 text-gray-900">Prefecture</label>
                   <div class="mt-2">
-                    <select name="prefecture" id="prefecture" autocomplete="prefecture" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    <select name="prefecture" id="prefecture" autocomplete="prefecture" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-slate-800 dark:bg-slate-950 dark:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                       <option>Add...</option>
                     </select>
                   </div>
@@ -182,7 +182,7 @@
                 <div class="sm:col-span-3">
                   <label for="county" class="block text-sm font-medium leading-6 text-gray-900">County</label>
                   <div class="mt-2">
-                    <select name="county" id="county" autocomplete="county" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    <select name="county" id="county" autocomplete="county" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-slate-800 dark:bg-slate-950 dark:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                       <option>Add..</option>
                     </select>
                   </div>
@@ -191,7 +191,7 @@
                 <div class="sm:col-span-3">
                   <label for="township" class="block text-sm font-medium leading-6 text-gray-900">Town</label>
                   <div class="mt-2">
-                    <select name="township" id="township" autocomplete="township" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    <select name="township" id="township" autocomplete="township" class="px-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-slate-800 dark:bg-slate-950 dark:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                       <option>Add..</option>
                     </select>
                   </div>
@@ -201,7 +201,7 @@
               <div class="sm:col-span-full">
                 <label for="note" class="mt-4 block text-sm font-medium leading-6 text-gray-900">Note</label>
                 <div class="mt-2">
-                  <textarea id="note" placeholder="add the information" name="note" rows="3" class="p-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  <textarea id="note" placeholder="add the information" name="note" rows="3" class="p-4 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-slate-800 dark:bg-slate-950 dark:text-slate-400 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   ></textarea>
                 </div>
               </div>

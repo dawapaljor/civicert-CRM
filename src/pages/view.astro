@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Header from "../components/Header.astro";
+import StatsCards from "../components/StatsCards.astro";
+import Entry from "../components/sections/EntryTable.astro"
+import RecentActivities from "../components/RecentActivities.astro";
+
+const usertype ="Users"
+---
+<Layout>
+    <Layout>
+        <div class="flex h-screen bg-gray-50">
+          <!-- Sidebar -->
+          <Sidebar />
+          
+          <!-- Main content -->
+          <div class="flex-1 flex flex-col overflow-hidden lg:ml-64">
+            <!-- Header -->
+            <Header />
+            
+            <!-- Main content area -->
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-6">
+              <!-- Stats Cards -->
+              <StatsCards />
+
+              <!-- Bottom Section -->
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <!-- Recent Activities -->
+                <div class="lg:col-span-3">
+                  <Entry {usertype}/>
+                </div>
+
+ <!-- Recent Activities -->
+                <!-- <div class="lg:col-span-1">
+                  
+                  <RecentActivities/>
+                  </div> -->
+                
+              
+            </main>
+          </div>
+        </div>
+      </Layout>
+</Layout>
